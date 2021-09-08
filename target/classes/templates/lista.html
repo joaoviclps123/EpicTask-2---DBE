@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>EPICTASK - Listagem</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+
+        <h1>Listagem</h1>
+        <div class="Lista">
+            <div class="row">
+            	<div class="col-3">Nome</div>
+            	<div class="col-3">E-mail</div>
+            	<div class="col-3">Senha</div>
+            </div>
+            
+            <th:block th:each="usuario : ${listaDeUsuarios}">
+				<div class="row">
+	            	<div class="col-3" th:text="${usuario.nome}">Nome</div>
+	            	<div class="col-3" th:text="${usuario.email}">E-mail</div>
+	            	<div class="col-3" th:text="${usuario.senha}">Senha</div>
+	            </div>            	
+           	</th:block>
+            
+            
+        </div>
+        <div class="grupo">
+            <a href="/home">Início</a>
+        </div>
+
+    </body>
+
+</html>
