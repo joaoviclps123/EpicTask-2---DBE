@@ -1,0 +1,21 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Sistema Login</title>
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+    </head>
+    <body>
+        <div id="corpo-form">
+            <h1>Entrar</h1>
+            <form method="post" th:object="${usuario}" th:action="@{/login/validarUsuario}">
+                <input type="email" th:field="*{email}" placeholder="Usuario" required="required">
+                <input type="password" th:field="*{senha}" placeholder="Senha" required="required">
+                
+                <div th:if="${login != null}"><h2 th:text="${login}"></h2></div>
+                
+                <input type="submit" value="ACESSAR">
+                <a href="/cadastro">Ainda não tem cadastro? <strong>CADASTRE-SE</strong></a>
+            </form>
+        </div>
+    </body>
+</html>
